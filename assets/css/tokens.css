@@ -507,167 +507,135 @@
     --safe-area-left:
         env(safe-area-inset-left);
 
-       /* =========================================================================
-       18. COMPONENT TOKENS
-       ========================================================================= */
-
-    /*
-        Esses tokens representam decisões de UI prontas.
-        Componentes devem usar APENAS esses valores quando possível.
-    */
-
-    /* -------------------------------------------------------------------------
-       Navbar
-       ------------------------------------------------------------------------- */
-
-    --navbar-height: 5.5rem;
-
-    --navbar-background:
-        var(--glass-background);
-
-    --navbar-border:
-        var(--border-default);
-
-    --navbar-elevation:
-        var(--elevation-2);
-
-    /* -------------------------------------------------------------------------
-       Hero
-       ------------------------------------------------------------------------- */
-
-    --hero-min-height:
-        calc(100svh - var(--navbar-height));
-
-    --hero-title-measure:
-        14ch;
-
-    --hero-text-measure:
-        var(--measure-md);
-
-    --hero-background:
-        var(--gradient-hero);
-
-    --hero-image-max-width:
-        640px;
-
-    /* -------------------------------------------------------------------------
-       Buttons
-       ------------------------------------------------------------------------- */
-
-    --button-height: 3.5rem;
-
-    --button-padding-inline:
-        var(--space-16);
-
-    --button-radius:
-        var(--radius-button);
-
-    --button-background-primary:
-        var(--color-primary);
-
-    --button-background-primary-hover:
-        var(--color-primary-hover);
-
-    --button-text-primary:
-        var(--text-inverse);
-
-    --button-elevation:
-        var(--elevation-1);
-
-    --button-elevation-hover:
-        var(--elevation-2);
-
-    --button-transition:
-        var(--transition-interactive);
-
-    /* -------------------------------------------------------------------------
-       Cards
-       ------------------------------------------------------------------------- */
-
-    --card-background:
-        var(--surface-base);
-
-    --card-border:
-        var(--border-default);
-
-    --card-radius:
-        var(--radius-card);
-
-    --card-elevation:
-        var(--elevation-1);
-
-    --card-elevation-hover:
-        var(--elevation-3);
-
-    --card-padding:
-        var(--space-8);
-
-    --card-transition:
-        var(--transition-interactive);
-
-    /* -------------------------------------------------------------------------
-       Badges
-       ------------------------------------------------------------------------- */
-
-    --badge-radius:
-        var(--radius-full);
-
-    --badge-padding-inline:
-        var(--space-6);
-
-    --badge-padding-block:
-        var(--space-2);
-
-    --badge-background:
-        var(--color-gray-100);
-
-    --badge-text:
-        var(--text-secondary);
-
-    /* -------------------------------------------------------------------------
-       Sections
-       ------------------------------------------------------------------------- */
-
-    --section-gap:
-        var(--space-32);
-
-    --section-padding-block:
-        var(--space-24);
-
-    --section-padding-inline:
-        var(--space-6);
-
     /* =========================================================================
-       19. SURFACES EXTENDED
-       ========================================================================= */
+   18. COMPONENT TOKENS
+   ========================================================================= */
 
-    --surface-overlay:
-        rgb(17 24 39 / .65);
+/* -------------------------------------------------------------------------
+   Navbar
+   ------------------------------------------------------------------------- */
 
-    --surface-glass:
-        rgb(255 255 255 / .72);
+--navbar-height: 5.5rem;
 
-    --surface-glass-strong:
-        rgb(255 255 255 / .88);
+--navbar-background:
+    var(--glass-background);
 
-    /* =========================================================================
-       20. PRINT (BÁSICO)
-       ========================================================================= */
+--navbar-border:
+    var(--border-default);
 
-    @media print {
+--navbar-elevation:
+    var(--elevation-2);
 
-        :root {
+/* -------------------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------------------- */
 
-            --color-primary: #000;
-            --color-secondary: #000;
+--hero-min-height:
+    calc(100svh - var(--navbar-height));
 
-            --surface-base: #fff;
+--hero-title-measure:
+    14ch;
 
-            --text-primary: #000;
+--hero-text-measure:
+    var(--measure-md);
 
-            --text-secondary: #000;
+--hero-background:
+    var(--gradient-hero);
 
-        }
+--hero-image-max-width:
+    640px;
 
-    };
-   }
+/* -------------------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------------------- */
+
+--button-height: 3.5rem;
+
+--button-padding-inline:
+    var(--space-16);
+
+--button-radius:
+    var(--radius-button);
+
+--button-background-primary:
+    var(--color-primary);
+
+--button-background-primary-hover:
+    var(--color-primary-hover);
+
+--button-text-primary:
+    var(--text-inverse);
+
+--button-elevation:
+    var(--elevation-1);
+
+--button-elevation-hover:
+    var(--elevation-2);
+
+--button-transition:
+    var(--transition-fast);
+
+/* -------------------------------------------------------------------------
+   Cards
+   ------------------------------------------------------------------------- */
+
+--card-background:
+    var(--surface-base);
+
+--card-border:
+    var(--border-default);
+
+--card-radius:
+    var(--radius-card);
+
+--card-elevation:
+    var(--elevation-1);
+
+--card-elevation-hover:
+    var(--elevation-3);
+
+--card-padding:
+    var(--space-8);
+
+--card-transition:
+    var(--transition-fast);
+
+/* -------------------------------------------------------------------------
+   Badges
+   ------------------------------------------------------------------------- */
+
+--badge-radius:
+    var(--radius-full);
+
+--badge-padding-inline:
+    var(--space-6);
+
+--badge-padding-block:
+    var(--space-2);
+
+--badge-background:
+    var(--color-gray-100);
+
+--badge-text:
+    var(--text-secondary);
+
+/* =========================================================================
+   20. PRINT
+   ========================================================================= */
+
+@media print {
+
+    :root {
+
+        --color-primary: #000;
+        --color-secondary: #000;
+
+        --surface-base: #fff;
+
+        --text-primary: #000;
+        --text-secondary: #000;
+
+    }
+
+};
+}
