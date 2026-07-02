@@ -1,0 +1,333 @@
+/* =============================================================================
+   CONECTA UERJ 2026
+   -----------------------------------------------------------------------------
+   Components
+
+   Objetivo:
+   Definir componentes reutilizáveis do microsite.
+
+   Regras:
+   • Sempre usar tokens.css como fonte única de verdade
+   • Nunca usar valores arbitrários
+   • Componentes devem ser independentes e previsíveis
+   ============================================================================= */
+
+
+/* =========================================================================
+   01. NAVBAR
+   ========================================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: var(--navbar-height);
+
+    display: flex;
+    align-items: center;
+
+    background: var(--navbar-background);
+    backdrop-filter: blur(var(--glass-blur));
+
+    border-bottom: var(--navbar-border);
+
+    box-shadow: var(--navbar-elevation);
+}
+
+.navbar__container {
+    width: 100%;
+    max-width: var(--container-max);
+
+    margin-inline: auto;
+
+    padding-inline: var(--section-padding-inline);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+}
+
+.navbar__nav {
+    display: flex;
+    gap: var(--gap-lg);
+}
+
+.navbar__link {
+    color: var(--text-secondary);
+    font-size: var(--text-body-sm);
+    transition: color var(--transition-fast);
+}
+
+.navbar__link:hover {
+    color: var(--color-primary);
+}
+
+/* =========================================================================
+   02. HERO
+   ========================================================================= */
+
+.hero {
+    min-height: var(--hero-min-height);
+
+    display: flex;
+    align-items: center;
+
+    background: var(--hero-background);
+}
+
+.hero__container {
+    width: 100%;
+    max-width: var(--container-max);
+
+    margin-inline: auto;
+
+    padding-inline: var(--section-padding-inline);
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--gap-xl);
+
+    align-items: center;
+}
+
+.hero__title {
+    font-size: var(--text-display);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+
+    max-width: var(--hero-title-measure);
+}
+
+.hero__text {
+    font-size: var(--text-body-lg);
+    color: var(--text-secondary);
+
+    max-width: var(--hero-text-measure);
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--gap-md);
+    margin-top: var(--space-8);
+}
+
+.hero__image {
+    width: 100%;
+    max-width: var(--hero-image-max-width);
+}
+
+/* =========================================================================
+   03. BUTTONS
+   ========================================================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: var(--button-height);
+
+    padding-inline: var(--button-padding-inline);
+
+    border-radius: var(--button-radius);
+
+    font-weight: var(--font-weight-semibold);
+
+    transition: var(--button-transition);
+
+    cursor: pointer;
+}
+
+/* Primary */
+.button--primary {
+    background: var(--button-background-primary);
+    color: var(--button-text-primary);
+
+    box-shadow: var(--button-elevation);
+}
+
+.button--primary:hover {
+    background: var(--button-background-primary-hover);
+    box-shadow: var(--button-elevation-hover);
+}
+
+/* Secondary */
+.button--secondary {
+    background: transparent;
+    border: var(--border-default);
+
+    color: var(--text-primary);
+}
+
+.button--secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* =========================================================================
+   04. CARDS (EMPRESAS / PATROCINADORES)
+   ========================================================================= */
+
+.card {
+    background: var(--card-background);
+
+    border: var(--card-border);
+
+    border-radius: var(--card-radius);
+
+    padding: var(--card-padding);
+
+    box-shadow: var(--card-elevation);
+
+    transition: var(--card-transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-elevation-hover);
+}
+
+.card__title {
+    font-size: var(--text-title-sm);
+    margin-bottom: var(--space-2);
+}
+
+.card__text {
+    color: var(--text-secondary);
+    font-size: var(--text-body-sm);
+}
+
+/* =========================================================================
+   05. BADGES (CATEGORIAS / STATUS)
+   ========================================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding-inline: var(--badge-padding-inline);
+    padding-block: var(--badge-padding-block);
+
+    border-radius: var(--badge-radius);
+
+    font-size: var(--text-caption);
+}
+
+.badge--primary {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+}
+
+.badge--muted {
+    background: var(--badge-background);
+    color: var(--badge-text);
+}
+
+/* =========================================================================
+   06. TIMELINE (CRONOGRAMA)
+   ========================================================================= */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
+
+.timeline__item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--gap-md);
+
+    align-items: start;
+}
+
+.timeline__time {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+}
+
+.timeline__content {
+    color: var(--text-secondary);
+}
+
+/* =========================================================================
+   07. GRID DE EMPRESAS
+   ========================================================================= */
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--gap-lg);
+
+    align-items: center;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-6);
+
+    background: var(--surface-base);
+
+    border-radius: var(--radius-md);
+
+    border: var(--border-default);
+}
+
+/* =========================================================================
+   08. FOOTER
+   ========================================================================= */
+
+.footer {
+    background: var(--color-gray-900);
+    color: var(--text-inverse);
+
+    padding-block: var(--section-padding-block);
+}
+
+.footer__container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+
+    padding-inline: var(--section-padding-inline);
+
+    display: grid;
+    gap: var(--gap-lg);
+}
+
+.footer__title {
+    font-size: var(--text-title);
+}
+
+.footer__text {
+    color: var(--color-gray-300);
+    font-size: var(--text-body-sm);
+}
+
+/* =========================================================================
+   09. RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 768px) {
+
+    .hero__container {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline__item {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar__nav {
+        display: none;
+    }
+}
