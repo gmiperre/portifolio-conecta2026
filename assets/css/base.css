@@ -114,7 +114,12 @@ h6 {
 }
 
 .section--alt {
-    background: var(--surface-alt);
+    background:
+        linear-gradient(
+            180deg,
+            var(--surface-alt),
+            var(--surface-base)
+        );
 }
 
 .section--elevated {

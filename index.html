@@ -1,427 +1,212 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ========================================================= -->
-    <!-- DOCUMENT                                                   -->
-    <!-- ========================================================= -->
+    <title>Conecta UERJ 2026 - Mostra de Estágios</title>
+    <meta name="description" content="Conecta UERJ 2026 - Mostra de Estágios. Conectando estudantes e empresas em um dia de oportunidades e experiências profissionais." />
 
-    <meta charset="UTF-8">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="IE=edge">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Conecta UERJ 2026 | Mostra de Estágios
-    </title>
-
-    <!-- ========================================================= -->
-    <!-- SEO                                                        -->
-    <!-- ========================================================= -->
-
-    <meta
-        name="description"
-        content="Página oficial do Conecta UERJ – Mostra de Estágios 2026. Conheça empresas participantes, programação completa, palestras, oportunidades de estágio e informações do evento.">
-
-    <meta
-        name="keywords"
-        content="UERJ, Conecta UERJ, estágio, estágios, mostra de estágios, carreira, empresas, networking, universidade">
-
-    <meta
-        name="author"
-        content="Universidade do Estado do Rio de Janeiro">
-
-    <meta
-        name="robots"
-        content="index, follow">
-
-    <meta
-        name="theme-color"
-        content="#E76129">
-
-    <link
-        rel="canonical"
-        href="https://conecta.uerj.br">
-
-    <!-- ========================================================= -->
-    <!-- OPEN GRAPH                                                 -->
-    <!-- ========================================================= -->
-
-    <meta
-        property="og:type"
-        content="website">
-
-    <meta
-        property="og:locale"
-        content="pt_BR">
-
-    <meta
-        property="og:title"
-        content="Conecta UERJ 2026 | Mostra de Estágios">
-
-    <meta
-        property="og:description"
-        content="Conectando estudantes, empresas e oportunidades em um dos maiores eventos de estágios da UERJ.">
-
-    <meta
-        property="og:url"
-        content="https://conecta.uerj.br">
-
-    <meta
-        property="og:site_name"
-        content="Conecta UERJ">
-
-    <meta
-        property="og:image"
-        content="assets/images/og-image.jpg">
-
-    <meta
-        property="og:image:width"
-        content="1200">
-
-    <meta
-        property="og:image:height"
-        content="630">
-
-    <meta
-        property="og:image:alt"
-        content="Banner oficial do Conecta UERJ 2026">
-
-    <!-- ========================================================= -->
-    <!-- TWITTER                                                    -->
-    <!-- ========================================================= -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image">
-
-    <meta
-        name="twitter:title"
-        content="Conecta UERJ 2026 | Mostra de Estágios">
-
-    <meta
-        name="twitter:description"
-        content="Conheça empresas, participe de palestras e encontre oportunidades de estágio na UERJ.">
-
-    <meta
-        name="twitter:image"
-        content="assets/images/og-image.jpg">
-
-    <!-- ========================================================= -->
-    <!-- FAVICONS                                                   -->
-    <!-- ========================================================= -->
-
-    <link
-        rel="icon"
-        href="favicon.ico">
-
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="assets/favicon/favicon-32x32.png">
-
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="assets/favicon/favicon-16x16.png">
-
-    <link
-        rel="apple-touch-icon"
-        href="assets/favicon/apple-touch-icon.png">
-
-    <!-- ========================================================= -->
-    <!-- PERFORMANCE                                                -->
-    <!-- ========================================================= -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <!--
-        Pré-carregamento da principal folha de estilos.
-        Mantém o carregamento previsível e melhora o desempenho percebido.
-    -->
-
-    <link
-        rel="preload"
-        href="assets/css/style.css"
-        as="style">
-
-    <!-- ========================================================= -->
-    <!-- TYPOGRAPHY                                                 -->
-    <!-- ========================================================= -->
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- ========================================================= -->
-    <!-- STYLES                                                     -->
-    <!-- ========================================================= -->
-
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css">
-
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 </head>
 
 <body>
 
-    <!-- ========================================================= -->
-    <!-- SKIP LINK                                                  -->
-    <!-- ========================================================= -->
+    <!-- =========================================================================
+         NAVBAR
+         ========================================================================= -->
 
-    <a
-        class="skip-link"
-        href="#main-content">
+    <header class="navbar">
+        <div class="navbar__container">
 
-        Pular para o conteúdo principal
+            <div class="navbar__logo">
+                Conecta UERJ 2026
+            </div>
 
-    </a>
-        <!-- ========================================================= -->
-    <!-- HEADER                                                     -->
-    <!-- ========================================================= -->
+            <nav class="navbar__nav">
+                <a class="navbar__link" href="#sobre">Sobre</a>
+                <a class="navbar__link" href="#empresas">Empresas</a>
+                <a class="navbar__link" href="#cronograma">Cronograma</a>
+                <a class="navbar__link" href="#local">Local</a>
+                <a class="navbar__link" href="#apoio">Apoio</a>
+            </nav>
 
-    <header class="header" id="top">
+        </div>
+    </header>
 
-        <!-- ===================================================== -->
-        <!-- ANNOUNCEMENT BAR                                      -->
-        <!-- ===================================================== -->
+    <!-- =========================================================================
+         HERO
+         ========================================================================= -->
 
-        <div class="announcement" role="status">
+    <section class="hero">
+        <div class="hero__container">
 
-            <div class="container announcement__container">
+            <div>
 
-                <p class="announcement__text">
+                <h1 class="hero__title">
+                    Conectando talentos e oportunidades no Conecta UERJ 2026
+                </h1>
 
-                    <strong>Conecta UERJ 2026</strong>
-
-                    <span class="announcement__separator" aria-hidden="true">
-                        •
-                    </span>
-
-                    Evento gratuito
-
-                    <span class="announcement__separator" aria-hidden="true">
-                        •
-                    </span>
-
-                    Campus Maracanã
-
+                <p class="hero__text">
+                    A Mostra de Estágios da UERJ reúne empresas, estudantes e instituições em um ambiente de aprendizado, networking e oportunidades reais de carreira.
                 </p>
+
+                <div class="hero__actions">
+                    <a href="#empresas" class="button button--primary">
+                        Ver empresas
+                    </a>
+
+                    <a href="#cronograma" class="button button--secondary">
+                        Cronograma
+                    </a>
+                </div>
+
+            </div>
+
+            <div>
+                <img
+                    class="hero__image"
+                    src="assets/img/hero-conecta.png"
+                    alt="Ilustração do evento Conecta UERJ"
+                />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         EMPRESAS
+         ========================================================================= -->
+
+    <section id="empresas" class="section section--alt">
+        <div class="container">
+
+            <h2>Empresas participantes</h2>
+
+            <div class="partners-grid mt-lg">
+
+                <div class="partner-logo">Empresa 1</div>
+                <div class="partner-logo">Empresa 2</div>
+                <div class="partner-logo">Empresa 3</div>
+                <div class="partner-logo">Empresa 4</div>
+                <div class="partner-logo">Empresa 5</div>
+                <div class="partner-logo">Empresa 6</div>
 
             </div>
 
         </div>
+    </section>
 
-        <!-- ===================================================== -->
-        <!-- PRIMARY NAVIGATION                                    -->
-        <!-- ===================================================== -->
+    <!-- =========================================================================
+         CRONOGRAMA
+         ========================================================================= -->
 
-        <nav
-            class="navbar"
-            aria-label="Navegação principal">
+    <section id="cronograma" class="section">
+        <div class="container container--content">
 
-            <div class="container navbar__container">
+            <h2>Cronograma</h2>
 
-                <!-- ============================================== -->
-                <!-- BRAND                                           -->
-                <!-- ============================================== -->
+            <div class="timeline mt-lg">
 
-                <a
-                    class="navbar__brand"
-                    href="#hero">
-
-                    <img
-                        src="assets/images/logo-conecta.svg"
-                        alt=""
-                        width="180"
-                        height="52">
-
-                    <span class="visually-hidden">
-
-                        Conecta UERJ - Página Inicial
-
-                    </span>
-
-                </a>
-
-                <!-- ============================================== -->
-                <!-- NAVIGATION MENU                                -->
-                <!-- ============================================== -->
-
-                <div
-                    class="navbar__menu"
-                    id="primary-navigation">
-
-                    <ul class="navbar__list">
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#about">
-
-                                O Evento
-
-                            </a>
-
-                        </li>
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#experience">
-
-                                Experiência
-
-                            </a>
-
-                        </li>
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#companies">
-
-                                Empresas
-
-                            </a>
-
-                        </li>
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#schedule">
-
-                                Programação
-
-                            </a>
-
-                        </li>
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#location">
-
-                                Local
-
-                            </a>
-
-                        </li>
-
-                        <li class="navbar__item">
-
-                            <a
-                                class="navbar__link"
-                                href="#faq">
-
-                                FAQ
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
+                <div class="timeline__item">
+                    <div class="timeline__time">09:00</div>
+                    <div class="timeline__content">Abertura oficial do evento</div>
                 </div>
 
-                <!-- ============================================== -->
-                <!-- ACTIONS                                         -->
-                <!-- ============================================== -->
-
-                <div class="navbar__actions">
-
-                    <a
-                        href="#schedule"
-                        class="btn btn-primary">
-
-                        Ver programação
-
-                    </a>
-
+                <div class="timeline__item">
+                    <div class="timeline__time">10:00</div>
+                    <div class="timeline__content">Início das visitas aos estandes</div>
                 </div>
 
-                <!-- ============================================== -->
-                <!-- MOBILE TOGGLE                                  -->
-                <!-- ============================================== -->
+                <div class="timeline__item">
+                    <div class="timeline__time">14:00</div>
+                    <div class="timeline__content">Palestras com empresas parceiras</div>
+                </div>
 
-                <button
-                    class="navbar__toggle"
-                    type="button"
-                    aria-label="Abrir menu"
-
-                    aria-expanded="false"
-
-                    aria-controls="primary-navigation">
-
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-
-                        fill="none"
-
-                        stroke="currentColor"
-
-                        stroke-width="2"
-
-                        stroke-linecap="round"
-
-                        stroke-linejoin="round"
-
-                        aria-hidden="true">
-
-                        <line
-                            x1="3"
-                            y1="6"
-                            x2="21"
-                            y2="6" />
-
-                        <line
-                            x1="3"
-                            y1="12"
-                            x2="21"
-                            y2="12" />
-
-                        <line
-                            x1="3"
-                            y1="18"
-                            x2="21"
-                            y2="18" />
-
-                    </svg>
-
-                </button>
+                <div class="timeline__item">
+                    <div class="timeline__time">17:00</div>
+                    <div class="timeline__content">Encerramento</div>
+                </div>
 
             </div>
 
-        </nav>
+        </div>
+    </section>
 
-    </header>
+    <!-- =========================================================================
+         LOCAL
+         ========================================================================= -->
 
-    <!-- ========================================================= -->
-    <!-- MAIN                                                      -->
-    <!-- ========================================================= -->
+    <section id="local" class="section section--alt">
+        <div class="container container--content">
 
-    <main id="main-content">
+            <h2>Local do evento</h2>
+
+            <p class="text-muted">
+                Universidade do Estado do Rio de Janeiro (UERJ) - Campus Maracanã.
+            </p>
+
+            <div class="mt-md media media--rounded">
+                <!-- placeholder de mapa -->
+                <img src="assets/img/mapa.png" alt="Mapa do local do evento">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         APOIO
+         ========================================================================= -->
+
+    <section id="apoio" class="section">
+        <div class="container">
+
+            <h2>Apoio e realização</h2>
+
+            <div class="partners-grid mt-lg">
+
+                <div class="partner-logo">UERJ</div>
+                <div class="partner-logo">CETREINA</div>
+                <div class="partner-logo">Parceiro 1</div>
+                <div class="partner-logo">Parceiro 2</div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         FOOTER
+         ========================================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer__container">
+
+            <h3 class="footer__title">
+                Conecta UERJ 2026
+            </h3>
+
+            <p class="footer__text">
+                Mostra de Estágios da Universidade do Estado do Rio de Janeiro.
+            </p>
+
+            <p class="footer__text">
+                © 2026 UERJ - Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
