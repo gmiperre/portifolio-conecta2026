@@ -1,0 +1,1268 @@
+/* =============================================================================
+   CONECTA UERJ 2026
+   -----------------------------------------------------------------------------
+   Layout
+
+   Responsabilidade
+
+   • Estrutura macro do microsite
+   • Ritmo visual
+   • Containers
+   • Layout editorial
+   • Superfícies
+   • Composição
+
+   Não estiliza:
+
+   • Botões
+   • Cards
+   • Navbar
+   • Timeline
+   • Badges
+
+   ============================================================================= */
+
+
+/* ==========================================================================
+   01 • ROOT LAYOUT
+   ========================================================================== */
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+
+    background: var(--surface-base);
+}
+
+.site__main {
+    flex: 1;
+}
+
+
+/* ==========================================================================
+   02 • CONTAINERS
+   ========================================================================== */
+
+.layout-container {
+
+    width: min(
+        calc(100% - (2 * var(--section-padding-inline))),
+        var(--container-max)
+    );
+
+    margin-inline: auto;
+}
+
+.layout-container--wide {
+
+    width: min(
+        calc(100% - (2 * var(--section-padding-inline))),
+        1440px
+    );
+
+    margin-inline: auto;
+}
+
+.layout-container--reading {
+
+    width: min(
+        100%,
+        var(--container-reading)
+    );
+
+    margin-inline: auto;
+}
+
+.layout-container--narrow {
+
+    width: min(
+        100%,
+        960px
+    );
+
+    margin-inline: auto;
+}
+
+
+/* ==========================================================================
+   03 • SECTION SYSTEM
+   ========================================================================== */
+
+.layout-section {
+
+    position: relative;
+
+    padding-block: clamp(
+        5rem,
+        9vw,
+        9rem
+    );
+
+    overflow: clip;
+}
+
+.layout-section:first-of-type {
+    padding-top: 0;
+}
+
+
+/* ==========================================================================
+   04 • VISUAL RHYTHM
+   ========================================================================== */
+
+/*
+    Nenhuma seção deve parecer igual.
+
+    O ritmo é criado alternando:
+
+    largura
+
+    composição
+
+    superfície
+
+    profundidade
+*/
+
+.layout-section:nth-of-type(even) {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--surface-alt),
+            var(--surface-base)
+        );
+}
+
+.layout-section:nth-of-type(odd) {
+
+    background:
+        var(--surface-base);
+}
+
+
+/* ==========================================================================
+   05 • EDITORIAL BLOCK
+   ========================================================================== */
+
+.editorial {
+
+    display: grid;
+    gap: var(--space-8);
+
+    max-width: 720px;
+}
+
+.editorial--center {
+
+    margin-inline: auto;
+    text-align: center;
+}
+
+.editorial--left {
+
+    margin-right: auto;
+}
+
+.editorial--right {
+
+    margin-left: auto;
+}
+
+.editorial__eyebrow {
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    color: var(--color-primary);
+
+    font-size: var(--text-body-sm);
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+.editorial__title {
+
+    max-width: 16ch;
+
+    line-height: 1.08;
+
+    letter-spacing: -.04em;
+}
+
+.editorial--center .editorial__title {
+
+    margin-inline: auto;
+}
+
+.editorial__description {
+
+    max-width: 62ch;
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-body-lg);
+}
+
+
+/* ==========================================================================
+   06 • CONTENT GRID
+   ========================================================================== */
+
+.content-grid {
+
+    display: grid;
+
+    gap: clamp(
+        2rem,
+        5vw,
+        5rem
+    );
+
+    align-items: center;
+}
+
+.content-grid--2 {
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+}
+
+.content-grid--3 {
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+}
+
+.content-grid--golden {
+
+    grid-template-columns:
+        1.25fr
+        .75fr;
+}
+
+.content-grid--reverse {
+
+    grid-template-columns:
+        .75fr
+        1.25fr;
+}
+
+
+/* ==========================================================================
+   07 • FLOW
+   ========================================================================== */
+
+/*
+    Cria ritmo entre elementos
+    sem precisar adicionar margin-bottom
+*/
+
+.flow > * + * {
+
+    margin-top: var(--space-6);
+}
+
+.flow--lg > * + * {
+
+    margin-top: var(--space-8);
+}
+
+.flow--xl > * + * {
+
+    margin-top: var(--space-12);
+}
+
+
+/* ==========================================================================
+   08 • SURFACES
+   ========================================================================== */
+
+.surface {
+
+    position: relative;
+
+    border-radius: var(--radius-xl);
+
+    background: var(--surface-base);
+
+    border: var(--border-default);
+
+    box-shadow: var(--elevation-1);
+}
+
+.surface--glass {
+
+    background: var(--surface-glass);
+
+    backdrop-filter:
+        blur(var(--glass-blur));
+}
+
+.surface--soft {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--surface-base),
+            var(--surface-alt)
+        );
+}
+
+.surface--elevated {
+
+    box-shadow:
+        var(--elevation-3);
+}
+
+
+/* ==========================================================================
+   09 • SECTION DIVIDER
+   ========================================================================== */
+
+.section-divider {
+
+    width: 80px;
+
+    height: 4px;
+
+    border-radius: var(--radius-full);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--color-primary),
+            transparent
+        );
+}
+
+.editorial--center
+.section-divider {
+
+    margin-inline: auto;
+}
+
+
+/* ==========================================================================
+   10 • DECORATIVE LAYERS
+   ========================================================================== */
+
+/*
+    Todos os elementos gráficos
+    ficarão atrás do conteúdo.
+*/
+
+.decor-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.decor-layer>* {
+
+    position: absolute;
+}
+
+.layout-section>* {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* =============================================================================
+   11 • HERO LAYOUT
+   ============================================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    isolation: isolate;
+
+    overflow: clip;
+}
+
+.hero__container {
+
+    width: min(
+        calc(100% - (2 * var(--section-padding-inline))),
+        var(--container-max)
+    );
+
+    margin-inline: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(380px, .92fr)
+        minmax(480px, 1.08fr);
+
+    gap: clamp(
+        3rem,
+        6vw,
+        7rem
+    );
+
+    align-items: center;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =============================================================================
+   12 • HERO CONTENT
+   ============================================================================= */
+
+.hero__content {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+    max-width: 640px;
+}
+
+.hero__eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    color: var(--color-primary);
+}
+
+.hero__title {
+
+    max-width: 11ch;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.6rem
+        );
+
+    line-height: 1.02;
+
+    letter-spacing: -.05em;
+}
+
+.hero__description {
+
+    max-width: 58ch;
+
+    color: var(--text-secondary);
+
+    font-size:
+        clamp(
+            1.05rem,
+            1.3vw,
+            1.25rem
+        );
+}
+
+.hero__actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-4);
+}
+
+
+/* =============================================================================
+   13 • HERO VISUAL
+   ============================================================================= */
+
+.hero__visual {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 620px;
+}
+
+
+/*
+    Aqui ficará:
+
+    ilustração
+
+    mockup
+
+    mapa
+
+    identidade
+
+*/
+
+.hero__artwork {
+
+    width: min(
+        100%,
+        720px
+    );
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =============================================================================
+   14 • HERO STATS
+   ============================================================================= */
+
+.hero__stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: var(--space-6);
+
+    margin-top: var(--space-12);
+}
+
+.hero-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+}
+
+.hero-stat__number {
+
+    font-size: clamp(
+        2rem,
+        3vw,
+        3rem
+    );
+
+    font-weight: 700;
+
+    color: var(--color-primary);
+
+    line-height: 1;
+}
+
+.hero-stat__label {
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-body-sm);
+}
+
+
+/* =============================================================================
+   15 • HERO BACKGROUND
+   ============================================================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+
+            circle at 18% 22%,
+
+            rgba(231,97,41,.16),
+
+            transparent 34%
+
+        ),
+
+        radial-gradient(
+
+            circle at 82% 18%,
+
+            rgba(31,78,121,.08),
+
+            transparent 40%
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            var(--surface-base) 0%,
+
+            var(--surface-base) 56%,
+
+            var(--surface-alt) 56%,
+
+            var(--surface-alt) 100%
+
+        );
+
+    z-index: 0;
+}
+
+
+/* =============================================================================
+   16 • ORGANIC SHAPE
+   ============================================================================= */
+
+.hero__wave {
+
+    position: absolute;
+
+    right: -10%;
+
+    top: -5%;
+
+    width: 90%;
+
+    aspect-ratio: 1;
+
+    border-radius:
+
+        40% 60%
+
+        55% 45%
+
+        /
+
+        45% 40%
+
+        60% 55%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(231,97,41,.10),
+
+            rgba(231,97,41,.03)
+
+        );
+
+    filter:
+
+        blur(10px);
+
+    z-index: 1;
+}
+
+
+/* =============================================================================
+   17 • CONECTA PATTERN
+   ============================================================================= */
+
+.hero__pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .04;
+
+    z-index: 0;
+
+    background-size:
+
+        120px 120px;
+
+    background-repeat: repeat;
+
+    /*
+        SVG será adicionado
+        posteriormente.
+    */
+}
+
+
+/* =============================================================================
+   18 • LIGHT EFFECT
+   ============================================================================= */
+
+.hero__glow {
+
+    position: absolute;
+
+    width: 600px;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,255,255,.95),
+
+            transparent 72%
+
+        );
+
+    top: -220px;
+
+    right: -180px;
+
+    filter: blur(18px);
+
+    z-index: 2;
+}
+
+
+/* =============================================================================
+   19 • HERO DIVIDER
+   ============================================================================= */
+
+.hero__divider {
+
+    position: absolute;
+
+    inset-block: 8%;
+
+    left: 56%;
+
+    width: 1px;
+
+    background:
+
+        linear-gradient(
+
+            transparent,
+
+            rgba(0,0,0,.05),
+
+            transparent
+
+        );
+
+    z-index: 1;
+}
+
+/* =============================================================================
+   20 • VISUAL SEQUENCE
+   ============================================================================= */
+
+/*
+    A landing deve parecer uma narrativa.
+
+    Cada seção muda levemente de composição.
+*/
+
+.layout-section:nth-of-type(3n + 1) .layout-container {
+    max-width: var(--container-max);
+}
+
+.layout-section:nth-of-type(3n + 2) .layout-container {
+    max-width: 1120px;
+}
+
+.layout-section:nth-of-type(3n + 3) .layout-container {
+    max-width: 960px;
+}
+
+
+/* =============================================================================
+   21 • SECTION INTRO
+   ============================================================================= */
+
+.section-intro {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-6);
+
+    margin-bottom: clamp(
+        3rem,
+        5vw,
+        5rem
+    );
+}
+
+.section-intro--center {
+
+    align-items: center;
+    text-align: center;
+}
+
+.section-intro__title {
+
+    max-width: 16ch;
+}
+
+.section-intro__description {
+
+    max-width: 62ch;
+
+    color: var(--text-secondary);
+}
+
+
+/* =============================================================================
+   22 • SPLIT LAYOUT
+   ============================================================================= */
+
+.split-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,.95fr)
+        minmax(0,1.05fr);
+
+    gap: clamp(
+        2rem,
+        6vw,
+        6rem
+    );
+
+    align-items: center;
+}
+
+.split-layout--reverse {
+
+    grid-template-columns:
+        minmax(0,1.05fr)
+        minmax(0,.95fr);
+}
+
+.split-layout__content {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-6);
+}
+
+.split-layout__visual {
+
+    position: relative;
+}
+
+
+/* =============================================================================
+   23 • MAP LAYOUT
+   ============================================================================= */
+
+.map-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        .7fr;
+
+    gap: clamp(
+        2rem,
+        5vw,
+        5rem
+    );
+
+    align-items: stretch;
+}
+
+.map-layout__map {
+
+    min-height: 520px;
+
+    border-radius: var(--radius-xl);
+
+    overflow: hidden;
+}
+
+.map-layout__aside {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-8);
+}
+
+
+/* =============================================================================
+   24 • INFORMATION LIST
+   ============================================================================= */
+
+.info-list {
+
+    display: grid;
+
+    gap: var(--space-6);
+}
+
+.info-item {
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr;
+
+    gap: var(--space-4);
+
+    align-items: start;
+}
+
+.info-item__icon {
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: var(--radius-full);
+
+    background: var(--surface-alt);
+}
+
+.info-item__content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+}
+
+
+/* =============================================================================
+   25 • LOGO GALLERY
+   ============================================================================= */
+
+.logo-gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap: var(--space-8);
+}
+
+.logo-gallery--compact {
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(140px,1fr)
+        );
+}
+
+
+/* =============================================================================
+   26 • EDITORIAL CALLOUT
+   ============================================================================= */
+
+.callout {
+
+    position: relative;
+
+    padding:
+        clamp(
+            2rem,
+            4vw,
+            4rem
+        );
+
+    border-radius: var(--radius-xl);
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--surface-base),
+            var(--surface-alt)
+        );
+
+    border: var(--border-default);
+
+    overflow: hidden;
+}
+
+.callout::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset-inline: 0;
+    top: 0;
+
+    height: 4px;
+
+    background:
+        var(--gradient-primary);
+}
+
+
+/* =============================================================================
+   27 • SPONSOR GROUPS
+   ============================================================================= */
+
+.sponsor-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-6);
+}
+
+.sponsor-group + .sponsor-group {
+
+    margin-top: var(--space-16);
+}
+
+.sponsor-group__header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: var(--space-6);
+
+    padding-bottom: var(--space-4);
+
+    border-bottom: var(--border-default);
+}
+
+.sponsor-group__logos {
+
+    margin-top: var(--space-8);
+}
+
+
+/* =============================================================================
+   28 • BACKGROUND DECORATIONS
+   ============================================================================= */
+
+.bg-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(24px);
+
+    opacity: .18;
+}
+
+.bg-orb--orange {
+
+    background:
+        rgba(231,97,41,.22);
+}
+
+.bg-orb--blue {
+
+    background:
+        rgba(31,78,121,.18);
+}
+
+.bg-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .03;
+
+    pointer-events: none;
+}
+
+
+/* =============================================================================
+   29 • PAGE TRANSITIONS
+   ============================================================================= */
+
+.layout-section {
+
+    scroll-margin-top:
+        calc(
+            var(--navbar-height)
+            + var(--space-8)
+        );
+}
+
+.layout-section>* {
+
+    animation:
+        fadeUp .6s ease both;
+}
+
+
+/* =============================================================================
+   30 • RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+
+    .hero__container,
+    .split-layout,
+    .map-layout,
+    .content-grid--2,
+    .content-grid--golden,
+    .content-grid--reverse {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+
+        min-height: auto;
+
+        padding-top:
+            calc(
+                var(--navbar-height)
+                + var(--space-16)
+            );
+    }
+
+    .hero__visual {
+
+        min-height: auto;
+
+        order: -1;
+    }
+
+    .hero__divider {
+
+        display: none;
+    }
+
+    .hero__stats {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .section-intro {
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .editorial,
+    .hero__content {
+
+        margin-inline: auto;
+
+        text-align: center;
+    }
+
+    .hero__actions {
+
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero__stats {
+
+        grid-template-columns: 1fr;
+    }
+
+    .logo-gallery {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+    .layout-section {
+
+        padding-block:
+            clamp(
+                4rem,
+                8vw,
+                6rem
+            );
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .logo-gallery {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero__title {
+
+        max-width: none;
+    }
+
+    .hero__actions {
+
+        flex-direction: column;
+    }
+
+    .hero__actions>* {
+
+        width: 100%;
+    }
+
+}
