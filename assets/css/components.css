@@ -878,6 +878,140 @@
 }
 
 /* ==========================================================================
+   FAQ
+   ========================================================================== */
+
+.faq{
+
+    max-width:900px;
+
+    margin-inline:auto;
+
+    margin-top:var(--space-16);
+
+}
+
+.faq__item{
+
+    border-bottom:1px solid var(--border-color);
+
+}
+
+.faq__item:first-child{
+
+    border-top:1px solid var(--border-color);
+
+}
+
+.faq__item summary{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-6);
+
+    cursor:pointer;
+
+    list-style:none;
+
+    padding:
+
+        var(--space-8)
+
+        0;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    transition:color var(--transition-base);
+
+}
+
+.faq__item summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.faq__item summary::after{
+
+    content:"+";
+
+    font-size:1.5rem;
+
+    color:var(--color-primary);
+
+    transition:transform var(--transition-base);
+
+}
+
+.faq__item[open] summary{
+
+    color:var(--color-secondary);
+
+}
+
+.faq__item[open] summary::after{
+
+    transform:rotate(45deg);
+
+}
+
+.faq__content{
+
+    padding-bottom:var(--space-8);
+
+    max-width:65ch;
+
+}
+
+.faq__content p{
+
+    color:var(--text-secondary);
+
+}
+
+.faq__contact{
+
+    margin-top:var(--space-20);
+
+    padding:var(--space-10);
+
+    text-align:center;
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-xl);
+
+    background:var(--surface-alt);
+
+}
+
+.faq__contact h3{
+
+    margin-bottom:var(--space-4);
+
+}
+
+.faq__contact p{
+
+    max-width:55ch;
+
+    margin:
+
+        0 auto
+
+        var(--space-8);
+
+    color:var(--text-secondary);
+
+}
+
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 
