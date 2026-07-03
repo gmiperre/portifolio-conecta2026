@@ -69,93 +69,270 @@
     color: var(--color-primary);
 }
 
-/* =========================================================================
+/* ==========================================================================
    02. HERO
-   ========================================================================= */
+   ========================================================================== */
 
 .hero {
-    min-height: var(--hero-min-height);
-
     position: relative;
+    overflow: hidden;
+
+    min-height: 100svh;
+
     display: flex;
     align-items: center;
 
-    /* Split visual de fundo */
+    isolation: isolate;
+
     background:
         linear-gradient(
-            90deg,
-            var(--surface-base) 0%,
-            var(--surface-base) 52%,
-            var(--color-gray-50) 52%,
-            var(--color-gray-50) 100%
+            135deg,
+            #ffffff 0%,
+            #fafbfd 45%,
+            #f4f7fb 100%
         );
 }
 
-/* linha divisória suave (profundidade) */
+/* --------------------------------------------------------------------------
+   Camada 01
+--------------------------------------------------------------------------- */
+
 .hero::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
+
         radial-gradient(
-            circle at 60% 40%,
-            rgba(231, 97, 41, 0.12),
-            transparent 55%
+            circle at 10% 20%,
+            rgba(231,97,41,.12),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 88% 22%,
+            rgba(31,78,121,.10),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 78% 78%,
+            rgba(231,97,41,.08),
+            transparent 40%
         );
 
-    pointer-events: none;
+    z-index: -2;
+
 }
 
-/* conteúdo acima do background */
+/* --------------------------------------------------------------------------
+   Grid institucional
+--------------------------------------------------------------------------- */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(31,78,121,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(31,78,121,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 64px 64px;
+
+    mask-image:
+
+        radial-gradient(
+            ellipse at center,
+            black 35%,
+            transparent 100%
+        );
+
+    opacity: .55;
+
+    z-index: -1;
+
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+--------------------------------------------------------------------------- */
+
 .hero__container {
-    position: relative;
-    z-index: 1;
 
     width: 100%;
     max-width: var(--container-max);
 
     margin-inline: auto;
+
     padding-inline: var(--section-padding-inline);
 
+    padding-block: clamp(6rem,8vw,10rem);
+
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: var(--gap-xl);
+
+    grid-template-columns:
+        minmax(0,1.15fr)
+        minmax(360px,.85fr);
 
     align-items: center;
+
+    gap: clamp(3rem,6vw,7rem);
+
 }
 
-/* texto */
-.hero__title {
-    font-size: clamp(2.2rem, 5vw, var(--text-display));
-    line-height: var(--line-height-tight);
-    letter-spacing: var(--letter-spacing-tight);
+/* --------------------------------------------------------------------------
+   Conteúdo
+--------------------------------------------------------------------------- */
 
-    max-width: var(--hero-title-measure);
+.hero__content{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-.hero__text {
-    font-size: var(--text-body-lg);
-    color: var(--text-secondary);
+.hero__eyebrow{
 
-    max-width: var(--hero-text-measure);
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    margin-bottom:var(--space-6);
+
+    font-size:var(--text-body-sm);
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--color-primary);
+
 }
 
-/* ações */
-.hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap-md);
-    margin-top: var(--space-8);
+.hero__eyebrow::before{
+
+    content:"";
+
+    width:32px;
+
+    height:2px;
+
+    background:var(--color-primary);
+
 }
 
-/* imagem */
-.hero__image {
-    width: 100%;
-    max-width: 520px;
-    justify-self: end;
+.hero__title{
 
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
+    max-width:15ch;
+
+    margin-bottom:var(--space-8);
+
+    font-size:clamp(3rem,6vw,5.4rem);
+
+    line-height:1.03;
+
+    letter-spacing:-.045em;
+
+}
+
+.hero__text{
+
+    max-width:58ch;
+
+    font-size:var(--text-body-lg);
+
+    color:var(--text-secondary);
+
+}
+
+.hero__actions{
+
+    display:flex;
+
+    gap:var(--gap-md);
+
+    margin-top:var(--space-10);
+
+    flex-wrap:wrap;
+
+}
+
+/* --------------------------------------------------------------------------
+   Arte
+--------------------------------------------------------------------------- */
+
+.hero__visual{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero__visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:460px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(231,97,41,.18),
+
+            transparent 70%
+
+        );
+
+    filter:blur(30px);
+
+}
+
+.hero__image{
+
+    position:relative;
+
+    width:min(100%,560px);
+
+    filter:
+
+        drop-shadow(0 32px 48px rgba(17,24,39,.16));
+
 }
 
 /* =========================================================================
